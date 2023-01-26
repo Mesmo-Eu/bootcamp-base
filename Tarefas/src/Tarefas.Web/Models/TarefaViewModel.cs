@@ -1,5 +1,7 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 
 namespace Tarefas.Web.Models;
 
