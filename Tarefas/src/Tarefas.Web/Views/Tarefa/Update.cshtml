@@ -1,18 +1,37 @@
 @model Tarefas.Web.Models.TarefaViewModel
 
-<form asp-action = "Update">
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
 
-    <div class="form-group">
-        <input asp-for="Id" hidden/>
-        <label asp-for="Titulo">@Html.DisplayNameFor(model => model.Titulo)</label>
-        <input asp-for="Titulo" class="form-control"/>
+<form classs="row-g3" asp-action = "Update">
+    <h3>UPDATE</h3>
+    @Html.ValidationSummary()
+
+    <div class = "col-12">
+        <div class="form-group">
+            <input asp-for="Id" hidden/>
+            <label asp-for="Titulo">@Html.DisplayNameFor(model => model.Titulo)</label>
+            <input asp-for="Titulo" class="form-control"/>
+        </div>
     </div>
 
-    <div class="form-group">
-        <input asp-for="Concluida" hidden/>
-        <label asp-for="Descricao">@Html.DisplayNameFor(model => model.Descricao)</label>
-        <input asp-for="Descricao" class="form-control"/>
+    <div class = "col-12">
+        <div class="form-group">
+            <input asp-for="Concluida" hidden/>
+            <label asp-for="Descricao">@Html.DisplayNameFor(model => model.Descricao)</label>
+            <input asp-for="Descricao" class="form-control"/>
+        </div>
+    </div>
+    <div class = "col-12"> 
+        <div class="form-check form-switch">
+            <input type="checkbox" asp-for="Concluida" class="form-check-input"/>
+            <label asp-for="Concluida">@Html.DisplayNameFor(model => model.Concluida)</label>
+        </div>
     </div>
         
-    <input type="submit" class="btn btn-primary"/>
+    <input type="submit" class="btn btn-primary"/> 
+    <a class="btn btn-secondary" asp asp-controller="Tarefa" asp-action="Index">Voltar</a>
 </form>

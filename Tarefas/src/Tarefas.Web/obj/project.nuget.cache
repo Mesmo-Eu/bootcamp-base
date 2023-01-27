@@ -1,12 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "DGEU/Li+9KKAiSmx08ppcVby0K+MKv6kD3HyLHead/ndZHPrng86+QrfZQ317TBVsWXqMKc8gxTV1KznrBXPJw==",
+  "dgSpecHash": "uY4gbzL+Q+GxOGSLVuZ+/nkKRjn72mVvGnAbIYDJ8Zz2s69Btvk8WjdEXsuc+L+P4QrniRyGHsQWSeTfOJLRMw==",
   "success": true,
   "projectFilePath": "/home/decom/Área de Trabalho/VictorBase/bootcamp-base/Tarefas/src/Tarefas.Web/Tarefas.Web.csproj",
   "expectedPackageFiles": [
+    "/home/decom/.nuget/packages/automapper/10.1.1/automapper.10.1.1.nupkg.sha512",
     "/home/decom/.nuget/packages/dapper/2.0.78/dapper.2.0.78.nupkg.sha512",
+    "/home/decom/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/home/decom/.nuget/packages/stub.system.data.sqlite.core.netstandard/1.0.113.2/stub.system.data.sqlite.core.netstandard.1.0.113.2.nupkg.sha512",
-    "/home/decom/.nuget/packages/system.data.sqlite.core/1.0.113.7/system.data.sqlite.core.1.0.113.7.nupkg.sha512"
+    "/home/decom/.nuget/packages/system.data.sqlite.core/1.0.113.7/system.data.sqlite.core.1.0.113.7.nupkg.sha512",
+    "/home/decom/.nuget/packages/system.reflection.emit/4.7.0/system.reflection.emit.4.7.0.nupkg.sha512"
   ],
   "logs": []
 }
