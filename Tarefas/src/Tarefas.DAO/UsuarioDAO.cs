@@ -53,7 +53,7 @@ namespace Tarefas.DAO
             using (var con = Connection)
             {
                 con.Open();
-                var result = con.Query<TarefaDTO>(
+                var result = con.Query<UsuarioDTO>(
                     @"SELECT Id, Email, Senha, Nome, Ativo FROM Usuario").ToList();
                     return result;
             }
@@ -64,7 +64,7 @@ namespace Tarefas.DAO
             using (var con = Connection)
             {
                 con.Open();
-                TarefaDTO result = con.Query<TarefaDTO>
+                UsuarioDTO result = con.Query<UsuarioDTO>
                 (
                     @"SELECT Id, Email, Senha, Nome, Ativo FROM Usuario 
                     WHERE Id = @Id", new{id}
