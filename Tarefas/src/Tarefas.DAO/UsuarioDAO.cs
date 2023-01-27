@@ -7,10 +7,10 @@ using Tarefas.DTO;
 
 namespace Tarefas.DAO
 {
-    public class TarefaDAO : BaseDAO, ITarefaDAO
+    public class UsuarioDAO : BaseDAO, IUsuarioDAO
     {
-        
-        public TarefaDAO()
+
+        public UsuarioDAO()
         {
             if(!File.Exists(DataSourceFile))
             {
@@ -24,62 +24,63 @@ namespace Tarefas.DAO
             {
                 con.Open();
                 con.Execute(
-                    @"CREATE TABLE Tarefa
+                    @"CREATE TABLE Usuario
                     (
                         Id          integer primary key autoincrement,
-                        Titulo      varchar(100) not null,
-                        Descricao   varchar(100) not null,
-                        Concluida   bool not null
+                        Email       varchar(100) not null,
+                        Senha       varchar(100) not null,
+                        Nome        varchar(100) not null,
+                        Ativo       bool not null
                     )"
                 );
             }
         }
 
-        public void Criar(TarefaDTO tarefa)
+        public void Criar(UsuarioDTO usuario)
         {
             using (var con = Connection)
             {
                 con.Open();
                 con.Execute(
-                    @"INSERT INTO Tarefa
-                    (Titulo, Descricao, Concluida) VALUES
-                    (@Titulo, @Descricao, @Concluida);", tarefa
-                );
+                    @"INSERT INTO Usuario (Email, Senha, Nome, Ativo) VALUES 
+                    (@Email. @Senha, @Nome, @Ativo);", usuario
+                ); 
             }
         }
-        public List<TarefaDTO> Consultar()
+
+        public List<UsuarioDTO> Consultar()
         {
             using (var con = Connection)
             {
                 con.Open();
                 var result = con.Query<TarefaDTO>(
-                    @"SELECT Id, Titulo, Descricao, Concluida FROM Tarefa").ToList();
+                    @"SELECT Id, Email, Senha, Nome, Ativo FROM Usuario").ToList();
                     return result;
             }
-        } 
+        }
 
-        public TarefaDTO Consultar(int id)
+        public UsuarioDTO Consultar(int id)
         {
             using (var con = Connection)
             {
                 con.Open();
                 TarefaDTO result = con.Query<TarefaDTO>
                 (
-                    @"SELECT Id, Titulo, Descricao, Concluida FROM Tarefa 
+                    @"SELECT Id, Email, Senha, Nome, Ativo FROM Usuario 
                     WHERE Id = @Id", new{id}
                 ).FirstOrDefault();
             return result;
             }
         }
 
-        public void Atualizar(TarefaDTO tarefa)
+        public void Atualizar(UsuarioDTO tarefa)
         {
             using (var con = Connection)
             {
                 con.Open();
                 con.Execute(
-                    @"UPDATE Tarefa
-                    SET Titulo = @Titulo, Descricao = @Descricao, Concluida = @Concluida
+                    @"UPDATE Usuario
+                    SET Email = @Email, Senha = @Senha, Nome = @Nome, Ativo = @Ativo
                     WHERE Id = @Id;", tarefa
                 );
             }
@@ -92,10 +93,12 @@ namespace Tarefas.DAO
             {
                 con.Open();
                 con.Execute(
-                    @"DELETE FROM Tarefa
+                    @"DELETE FROM Usuario
                     WHERE Id = @Id", new {id}
                 );
             }
         }
+
+
     }
 }

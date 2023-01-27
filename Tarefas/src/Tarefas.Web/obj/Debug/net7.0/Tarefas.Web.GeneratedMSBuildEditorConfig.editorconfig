@@ -48,6 +48,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGFyZWZhL1VwZGF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/home/decom/Área de Trabalho/VictorBase/bootcamp-base/Tarefas/src/Tarefas.Web/Views/Tarefa/_Status.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGFyZWZhL19TdGF0dXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/decom/Área de Trabalho/VictorBase/bootcamp-base/Tarefas/src/Tarefas.Web/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
